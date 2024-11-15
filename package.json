@@ -8,8 +8,7 @@
     "pre-commit": "^1.2.2"
   },
   "scripts": {
-   
-    "build": "browserify main.js -o dist/build.js"
+    "build": "browserify main.js -o public/build.js"
   },
   "pre-commit": [
     "build"
@@ -20,22 +19,21 @@
         "babelify",
         {
           "presets": [
-            "es2015"
+            "@babel/preset-env"
           ],
           "plugins": [
-            "syntax-async-functions",
-            "transform-regenerator"
+            "@babel/plugin-syntax-async-functions",
+            "@babel/plugin-transform-regenerator"
           ]
         }
       ]
     ]
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-syntax-async-functions": "^6.13.0",
-    "babel-plugin-transform-regenerator": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.21.0",
+    "@babel/plugin-syntax-async-functions": "^7.8.3",
+    "@babel/plugin-transform-regenerator": "^7.21.0",
     "babelify": "^8.0.0",
     "budo": "^10.0.4"
   }
